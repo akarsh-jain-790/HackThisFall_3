@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Background"
+    tools:context=".fragments.SearchFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/message_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/medium"
+            android:text="Search Product"
+            android:textColor="@color/Black"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/dimen_24"
+                android:layout_marginTop="@dimen/dimen_24"
+                android:background="@drawable/round_corner"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawablePadding="@dimen/dimen_12"
+                android:fontFamily="@font/regular"
+                android:hint="Search..."
+                android:padding="@dimen/dimen_12"
+                android:textColor="@color/Black"
+                android:textColorHint="@color/md_grey_600" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="24dp"
+                android:src="@drawable/ic_filter" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/emptyView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_undraw_empty" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_12"
+                    android:fontFamily="@font/medium"
+                    android:gravity="center"
+                    android:text="No Product Found"
+                    android:textColor="@color/Black"
+                    android:textSize="@dimen/dimen_24" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:animateLayoutChanges="true">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_users"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/product_item"
+                    tools:itemCount="6"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    android:orientation="vertical">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:visibility="invisible" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

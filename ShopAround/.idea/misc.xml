@@ -3,7 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_baseline_search_24.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/ic_filter.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/ic_help_circle.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/ic_log_out.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/ic_login.xml" value="0.161" />
+        <entry key="app/src/main/res/drawable-v24/ic_map_pin.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/ic_message_square.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/ic_undraw_empty.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable-v24/round_corner.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable/ic_login.xml" value="0.142" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.16795654296874998" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2677083333333333" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.28177083333333336" />
+        <entry key="app/src/main/res/layout/activity_sign_up2.xml" value="0.13177083333333334" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_verify_otp.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/chip.xml" value="0.28177083333333336" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13177083333333334" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.13177083333333334" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.13177083333333334" />
+        <entry key="app/src/main/res/menu/tabs.xml" value="0.28177083333333336" />
       </map>
     </option>
   </component>
@@ -12,5 +33,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.19198974609375002" />
+      </ProjectState>
+    </option>
   </component>
 </project>
