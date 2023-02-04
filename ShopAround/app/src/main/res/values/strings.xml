@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">ShopAround</string>
+
+    <!--  Sign In  -->
+    <string name="sign_in">Sign In</string>
+    <string name="request_otp">Request OTP</string>
+    <string name="phone">Phone</string>
+    <string name="verify_otp">Verify OTP</string>
+
+    <!--  Sign Up  -->
+    <string name="sign_up">Sign Up</string>
+    <string name="next">Next</string>
+    <string name="name">Full Name</string>
+    <string name="pincode">Enter Pincode</string>
+    <string name="interest">Pick Interest</string>
+    <string name="email_address">Email Address</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Prefer Not To Say</item>
+    </string-array>
+
+    <!--  MainActivity  -->
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
 </resources>

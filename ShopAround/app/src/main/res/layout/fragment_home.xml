@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/Background"
+                app:elevation="0dp">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:expandedTitleMarginBottom="26dp"
+                    app:expandedTitleMarginStart="26dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    app:titleEnabled="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_16"
+                        app:layout_collapseMode="parallax">
+
+                        <ImageView
+                            android:id="@+id/location_icon"
+                            android:layout_width="26dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginBottom="42dp"
+                            android:contentDescription="@string/app_name"
+                            android:paddingBottom="10dp"
+                            android:src="@drawable/ic_map_pin"
+                            app:tint="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/area_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="46dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toStartOf="@id/dark_mode"
+                            android:fontFamily="@font/bold"
+                            android:text="Hemu Kalani"
+                            android:textColor="@color/Black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/area_name"
+                            android:layout_marginStart="46dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="9dp"
+                            android:layout_toStartOf="@id/dark_mode"
+                            android:fontFamily="@font/regular"
+                            android:text="Bairagarh, Bhopal"
+                            android:textColor="@color/Black"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/dark_mode"
+                            android:layout_width="26dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="16dp"
+                            android:contentDescription="@string/app_name"
+                            android:paddingBottom="10dp"
+                            android:src="@drawable/ic_message_square"
+                            app:tint="@color/Black" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerImageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingStart="80dp"
+                android:paddingEnd="80dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shops_RV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:nestedScrollingEnabled="true"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="7"
+                tools:listitem="@layout/shop_card">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
