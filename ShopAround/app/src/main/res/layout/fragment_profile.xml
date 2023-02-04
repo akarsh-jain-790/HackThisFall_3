@@ -269,9 +269,9 @@
                     app:cardCornerRadius="8dp">
 
                     <ImageView
-                        android:id="@+id/logout_iamge_IV"
+                        android:id="@+id/logout_image_IV"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="match_parent"
                         android:background="@drawable/ic_log_out"
                         android:scaleType="centerCrop" />
 

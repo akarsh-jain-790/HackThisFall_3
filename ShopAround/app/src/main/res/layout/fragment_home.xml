@@ -97,26 +97,26 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/my_pager"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="0dp"
-                android:layout_height="245dp"
-                app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerImageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingStart="80dp"
+                android:paddingEnd="80dp" />
 
-            <com.google.android.material.tabs.TabLayout
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:tabGravity="center"
-                android:id="@+id/my_tablayout"
-                app:tabBackground="@drawable/home"
-                app:tabIndicatorHeight="0dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shops_RV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/my_pager">
-            </com.google.android.material.tabs.TabLayout>
+                android:layout_margin="20dp"
+                android:nestedScrollingEnabled="true"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="7"
+                tools:listitem="@layout/shop_card">
+            </androidx.recyclerview.widget.RecyclerView>
+
         </LinearLayout>
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

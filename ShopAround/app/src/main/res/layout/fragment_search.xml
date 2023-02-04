@@ -38,6 +38,7 @@
                 android:layout_marginTop="@dimen/dimen_24"
                 android:background="@drawable/round_corner"
                 android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawableEnd="@drawable/ic_baseline_camera_alt_24"
                 android:drawablePadding="@dimen/dimen_12"
                 android:fontFamily="@font/regular"
                 android:hint="Search..."

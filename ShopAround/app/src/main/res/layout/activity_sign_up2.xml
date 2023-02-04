@@ -24,7 +24,6 @@
             android:src="@drawable/ic_baseline_arrow_back_ios_24" />
 
         <TextView
-            android:id="@+id/sign_upTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bold"
@@ -48,62 +47,27 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="36dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/sign_upTV"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/interest_ET"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:background="@drawable/round_corner"
-            android:ems="10"
-            android:fontFamily="@font/medium"
-            android:hint="@string/interest"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:paddingLeft="10dp"
-            android:layout_marginLeft="36dp"
-            android:textColor="@color/FontColor"/>
-
-        <Button
-            android:id="@+id/button_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:layout_marginLeft="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_keyword" />
-
-    </LinearLayout>
+        android:fontFamily="@font/bold"
+        android:text="Pick your Interests:"
+        android:textColor="@color/Black"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="20dp"
+        android:textSize="16sp" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add" />
-
-    <Button
-        android:id="@+id/button_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Show Selections"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
