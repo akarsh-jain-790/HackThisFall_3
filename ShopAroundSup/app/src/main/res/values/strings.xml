@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">ShopAroundSup</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="next">Next</string>
+    <string name="name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Prefer Not To Say</item>
+    </string-array>
+
+    <string name="sign_in_text">sign_in</string>
+    <string name="have_an_account">already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="request_otp">Request OTP</string>
+    <string name="phone">Phone</string>
+
+    <string-array name="category_array">
+        <item>Clothes</item>
+        <item>Cosmetics</item>
+        <item>Kirana</item>
+        <item>Medical</item>
+        <item>Electronics</item>
+        <item>Hardware</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

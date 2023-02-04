@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".InventoryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/profileTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/bold"
+            android:text="Profile"
+            android:textColor="@color/Black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileImageCV"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileTV"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/avatar1" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/profileNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="profile_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintLeft_toRightOf="@id/profileImageCV"
+            app:layout_constraintTop_toBottomOf="@id/profileTV"
+            app:layout_constraintRight_toRightOf="parent" />
+        <TextView
+            android:id="@+id/shopCategoryTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="vendor_name"
+            android:scrollbarSize="12sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@id/profileImageCV"
+            app:layout_constraintTop_toBottomOf="@id/profileNameTV"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <TextView
+            android:id="@+id/vendorNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:text="vendor_name"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toRightOf="@id/profileImageCV"
+            app:layout_constraintTop_toBottomOf="@id/shopCategoryTv"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/chatBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/vendorNameTv"
+            app:layout_constraintLeft_toRightOf="@id/profileImageCV"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintRight_toLeftOf="@id/editProfileBtn"
+            android:text="Chat"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/editProfileBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/vendorNameTv"
+            app:layout_constraintLeft_toRightOf="@id/chatBtn"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Edit"
+            android:textSize="12sp" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/div1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Gray"
+            app:layout_constraintTop_toBottomOf="@id/chatBtn"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/inventoryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:text="Inventory"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/div1"
+            app:layout_constraintBottom_toTopOf="@id/div2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="20dp" />
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_baseline_add_circle_outline_24"
+            app:layout_constraintTop_toBottomOf="@id/div1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/div2" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/div2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Gray"
+            app:layout_constraintTop_toBottomOf="@id/div1"
+            android:layout_marginTop="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
