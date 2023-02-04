@@ -81,7 +81,6 @@ public class RegShopDetails extends AppCompatActivity {
                     shopImgUri = Uri.parse("android.resource://" + RegShopDetails.this.getPackageName() + "/drawable/avatar1");
                 }
 
-                Toast.makeText(RegShopDetails.this, shopImgUri.toString(), Toast.LENGTH_SHORT).show();
                 new RegShopPreferenceManager(RegShopDetails.this).saveShopDetails(shopName, address, city, pincode, category, shopImgUri.toString());
 
                 Intent i = new Intent(RegShopDetails.this, KYC.class);
