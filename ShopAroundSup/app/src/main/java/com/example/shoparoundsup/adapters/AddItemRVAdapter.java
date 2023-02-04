@@ -1,6 +1,7 @@
 package com.example.shoparoundsup.adapters;
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,7 @@ public class AddItemRVAdapter extends RecyclerView.Adapter<AddItemRVAdapter.myVi
 
         holder.itemName.setText(itemList.get(position).getName());
         holder.itemPrice.setText(itemList.get(position).getPrice());
-        holder.image.setImageURI(itemList.get(position).getItemImage());
+        holder.image.setImageURI(Uri.parse(itemList.get(position).getItemImage()));
         holder.removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

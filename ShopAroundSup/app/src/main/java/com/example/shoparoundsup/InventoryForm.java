@@ -4,11 +4,17 @@ import static com.example.shoparoundsup.RegVendorDetails.PICK_IMAGE;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -52,7 +58,7 @@ public class InventoryForm extends AppCompatActivity {
 
     RegPreferenceManager vendorPref;
     RegShopPreferenceManager shopPref;
-    Uri itemImgUri;
+    Uri[] itemImgUri = new Uri[1];
     FirebaseFirestore fStore;
     FirebaseUser fUser;
     FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -80,6 +86,8 @@ public class InventoryForm extends AppCompatActivity {
         adapter = new AddItemRVAdapter(list);
         itemsRV.setAdapter(adapter);
 
+        this.grantUriPermission(this.getPackageName(), itemImgUri[0], Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
         itemImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +105,38 @@ public class InventoryForm extends AppCompatActivity {
                 String name = itemNameEt.getText().toString().trim();
                 String price = itemPriceEt.getText().toString().trim();
 
-                InventoryItemModel data = new InventoryItemModel(name, price, itemImgUri);
+                String s = fUser.getPhoneNumber() + "/";
+
+                itemsRef = storageReference.child(s + UUID.randomUUID().toString());
+                if(itemImgUri[0] == null) {
+                    itemImgUri[0] = Uri.parse("android.resource://" + InventoryForm.this.getPackageName() + "/drawable/avatar1");
+                }
+                UploadTask uploadTaskShop = itemsRef.putFile(itemImgUri[0]);
+                Toast.makeText(InventoryForm.this, itemImgUri[0].toString(), Toast.LENGTH_SHORT).show();
+                uploadTaskShop.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                        itemsRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                Toast.makeText(InventoryForm.this, itemImgUri[0].toString(), Toast.LENGTH_SHORT).show();
+                                list.add(new InventoryItemModel(name, price, uri.toString()));
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(InventoryForm.this, "Cant upload the item.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(InventoryForm.this, "Something Went Wrong!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                InventoryItemModel data = new InventoryItemModel(name, price, itemImgUri[0].toString());
                 list.add(data);
                 adapter.notifyItemInserted(list.size()-1);
                 itemNameEt.setText("");
@@ -221,9 +260,14 @@ public class InventoryForm extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE) {
-            itemImgUri = data.getData();
-            itemImage.setImageURI(itemImgUri);
+        if(resultCode != RESULT_CANCELED) {
+            if (requestCode == PICK_IMAGE) {
+                itemImgUri[0] = data.getData();
+                itemImage.setImageURI(itemImgUri[0]);
+            }
         }
     }
+
+
+
 }

@@ -4,10 +4,9 @@ import android.net.Uri;
 
 public class InventoryItemModel {
 
-    String Name, Price;
-    Uri ItemImage;
+    String Name, Price, ItemImage;
 
-    public InventoryItemModel(String name, String price, Uri itemImage) {
+    public InventoryItemModel(String name, String price, String itemImage) {
         Name = name;
         Price = price;
         ItemImage = itemImage;
@@ -16,11 +15,11 @@ public class InventoryItemModel {
     public InventoryItemModel() {
     }
 
-    public Uri getItemImage() {
+    public String getItemImage() {
         return ItemImage;
     }
 
-    public void setItemImage(Uri itemImage) {
+    public void setItemImage(String itemImage) {
         ItemImage = itemImage;
     }
 
