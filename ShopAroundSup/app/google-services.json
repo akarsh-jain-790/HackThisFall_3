@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "419760034659",
+    "project_id": "shoparound-1bb8e",
+    "storage_bucket": "shoparound-1bb8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419760034659:android:2e47ef65a553c8901a3956",
+        "android_client_info": {
+          "package_name": "com.example.shoparoundsup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419760034659-i0d9g72dfd7b9v1b9tossq79ie0nthom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJhhrSsWukgiiLyEFbIlPGkkSMgVLtauI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419760034659-i0d9g72dfd7b9v1b9tossq79ie0nthom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
