@@ -53,7 +53,6 @@ public class InventoryForm extends AppCompatActivity {
     RegPreferenceManager vendorPref;
     RegShopPreferenceManager shopPref;
     Uri itemImgUri;
-
     FirebaseFirestore fStore;
     FirebaseUser fUser;
     FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -94,14 +93,15 @@ public class InventoryForm extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String name = itemNameEt.getText().toString().trim();
                 String price = itemPriceEt.getText().toString().trim();
+
                 InventoryItemModel data = new InventoryItemModel(name, price, itemImgUri);
-                list.add(0, data);
-                adapter.notifyItemInserted(0);
+                list.add(data);
+                adapter.notifyItemInserted(list.size()-1);
                 itemNameEt.setText("");
                 itemPriceEt.setText("");
-
             }
         });
 
@@ -110,7 +110,7 @@ public class InventoryForm extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                
                 vendorPref = new RegPreferenceManager(InventoryForm.this);
                 shopPref = new RegShopPreferenceManager(InventoryForm.this);
 
@@ -119,23 +119,6 @@ public class InventoryForm extends AppCompatActivity {
                 UploadTask uploadTaskProf = profileRef.putFile(Uri.parse(vendorPref.getProfileImage()));
                 UploadTask uploadTaskShop = shopRef.putFile(Uri.parse(shopPref.getShopImage()));
 
-                
-
-                for(int i=0; i<list.size(); i++){
-                    Uri uri = list.get(i).getItemImage();
-
-                    UploadTask uploadTask = profileRef.putFile(uri);
-                    uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                        }
-                    });
-                }
 
                 uploadTaskProf.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override

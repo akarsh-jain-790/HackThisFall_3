@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,6 +39,7 @@ public class AddItemRVAdapter extends RecyclerView.Adapter<AddItemRVAdapter.myVi
 
         holder.itemName.setText(itemList.get(position).getName());
         holder.itemPrice.setText(itemList.get(position).getPrice());
+        holder.image.setImageURI(itemList.get(position).getItemImage());
         holder.removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,11 +62,13 @@ public class AddItemRVAdapter extends RecyclerView.Adapter<AddItemRVAdapter.myVi
 
     public class myViewHolder extends RecyclerView.ViewHolder {
         TextView itemName, itemPrice, removeBtn;
+        ImageView image;
         public myViewHolder(View view){
             super(view);
             itemName = view.findViewById(R.id.itemName);
             itemPrice = view.findViewById(R.id.itemPrice);
             removeBtn = view.findViewById(R.id.removeBtn);
+            image = view.findViewById(R.id.itemImage);
         }
     }
 }
